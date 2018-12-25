@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>IdrisDoc: TParsec.Types</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: TParsec.Types<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>TParsec.Types</h1><dl class="decls"><dt id="TParsec.Types.MkParameters"><span class="name constructor" title="TParsec.Types.MkParameters">MkParameters</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="Type of tokens">Tok</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="Type of sized input (~ Vec Tok)">Toks</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
+<span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="The action allowing us to track consumed tokens">recordToken</span> : <span class="documented boundvar" title="Type of tokens">Tok</span> ->
+<span class="implicit documented boundvar" title="is the monad the parser uses.">m</span> <a class="type" title="Unit" href="[builtins].html#Unit">()</a>) ->
+<a class="type" title="TParsec.Types.Parameters" href="TParsec.Types.html#TParsec.Types.Parameters">Parameters</a> <span class="implicit documented boundvar" title="is the monad the parser uses.">m</span></span></dt><dd><dl><dt>m</dt><dd><p>is the monad the parser uses.</p>
+</dd><dt>Tok</dt><dd><p>Type of tokens</p>
+</dd><dt>Toks</dt><dd><p>Type of sized input (~ Vec Tok)</p>
+</dd><dt>recordToken</dt><dd><p>The action allowing us to track consumed tokens</p>
+</dd></dl></dd><dt id="TParsec.Types.MkParser"><span class="name constructor" title="TParsec.Types.MkParser">MkParser</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">runParser</span> : <a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> <span class="implicit boundvar" title="">m</span>
+<span class="implicit documented boundvar" title="an upper bound on the size of the inputs it can deal with">n</span> ->
+<a class="function" title="TParsec.Types.Parameters.Toks" href="TParsec.Types.Parameters.html#TParsec.Types.Parameters.Toks">Toks</a> <span class="implicit documented boundvar" title="the parameters">p</span>
+<span class="implicit boundvar" title="">m</span> ->
+<span class="implicit documented boundvar" title="the monad used for parsing">mn</span> (<a class="type" title="TParsec.Success.Success" href="TParsec.Success.html#TParsec.Success.Success">Success</a> (<a class="function" title="TParsec.Types.Parameters.Toks" href="TParsec.Types.Parameters.html#TParsec.Types.Parameters.Toks">Toks</a> <span class="implicit documented boundvar" title="the parameters">p</span>)
+<span class="implicit documented boundvar" title="the type of value produced">a</span>
+<span class="implicit boundvar" title="">m</span>)) ->
+<a class="type" title="TParsec.Types.Parser" href="TParsec.Types.html#TParsec.Types.Parser">Parser</a> <span class="implicit documented boundvar" title="the monad used for parsing">mn</span>
+<span class="implicit documented boundvar" title="the parameters">p</span>
+<span class="implicit documented boundvar" title="the type of value produced">a</span>
+<span class="implicit documented boundvar" title="an upper bound on the size of the inputs it can deal with">n</span></span></dt><dd><dl><dt>mn</dt><dd><p>the monad used for parsing</p>
+</dd><dt>p</dt><dd><p>the parameters</p>
+</dd><dt>a</dt><dd><p>the type of value produced</p>
+</dd><dt>n</dt><dd><p>an upper bound on the size of the inputs it can deal with</p>
+</dd></dl></dd><dt id="TParsec.Types.MkPosition"><span class="name constructor" title="TParsec.Types.MkPosition">MkPosition</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="Line number (starting from 0)">line</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+(<span class="documented boundvar" title="Character offset in the given line">offset</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<a class="type" title="TParsec.Types.Position" href="TParsec.Types.html#TParsec.Types.Position">Position</a></span></dt><dd><dl><dt>line</dt><dd><p>Line number (starting from 0)</p>
+</dd><dt>offset</dt><dd><p>Character offset in the given line</p>
+</dd></dl></dd><dt id="TParsec.Types.MkTPT"><span class="name constructor" title="TParsec.Types.MkTPT">MkTPT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">runTPT</span> : <a class="type" title="Control.Monad.State.StateT" href="Control.Monad.State.html#Control.Monad.State.StateT">StateT</a> <a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><a class="type" title="TParsec.Types.Position" href="TParsec.Types.html#TParsec.Types.Position">Position</a><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit documented boundvar" title="the annotations the user can put on subparses">an</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">)</a>
+(<a class="type" title="TParsec.Result.ResultT" href="TParsec.Result.html#TParsec.Result.ResultT">ResultT</a> <span class="implicit documented boundvar" title="the errors the parser may raise">e</span>
+<span class="implicit documented boundvar" title="the monad the transformer acts upon">m</span>)
+<span class="implicit documented boundvar" title="the type of values it returns">a</span>) ->
+<a class="type" title="TParsec.Types.TParsecT" href="TParsec.Types.html#TParsec.Types.TParsecT">TParsecT</a> <span class="implicit documented boundvar" title="the errors the parser may raise">e</span>
+<span class="implicit documented boundvar" title="the annotations the user can put on subparses">an</span>
+<span class="implicit documented boundvar" title="the monad the transformer acts upon">m</span>
+<span class="implicit documented boundvar" title="the type of values it returns">a</span></span></dt><dd><dl><dt>e</dt><dd><p>the errors the parser may raise</p>
+</dd><dt>an</dt><dd><p>the annotations the user can put on subparses</p>
+</dd><dt>m</dt><dd><p>the monad the transformer acts upon</p>
+</dd><dt>a</dt><dd><p>the type of values it returns</p>
+</dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>IdrisDoc: Builtins</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Builtins<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Builtins</h1><dl class="decls"><dt id="Builtins.DPair"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.DPair">DPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the value to place in the type.">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="the dependent type that requires the value.">P</span> : <span class="documented boundvar" title="the value to place in the type.">a</span> ->
+<span class="type" title="Type">Type</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Dependent pairs aid in the construction of dependent types by<br />
+providing evidence that some value resides in the type.</p>
+<p>Formally, speaking, dependent pairs represent existential<br />
+quantification - they consist of a witness for the existential<br />
+claim and a proof that the property holds for it.</p>
+<dl><dt>a</dt><dd><p>the value to place in the type.</p>
+</dd><dt>P</dt><dd><p>the dependent type that requires the value.</p>
+</dd></dl><dl class="decls"><dt id="Builtins.MkDPair"><span class="name constructor" title="Builtins.MkDPair">MkDPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">pf</span> : <span class="implicit boundvar" title="">P</span> <span class="boundvar" title="">x</span>) ->
+<a class="type" title="Builtins.DPair" href="Builtins.html#Builtins.DPair">DPair</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">P</span></span></dt><dd></dd></dl></dd><dt id="Builtins.Pair"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.Pair">Pair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the left elements in the pair">A</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="the type of the right elements in the pair">B</span> : <span class="type" title="Type">Type</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>The non-dependent pair type, also known as conjunction.</p>
+<dl><dt>A</dt><dd><p>the type of the left elements in the pair</p>
+</dd><dt>B</dt><dd><p>the type of the right elements in the pair</p>
+</dd></dl><dl class="decls"><dt id="Builtins.MkPair"><span class="name constructor" title="Builtins.MkPair">MkPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the left element of the pair">a</span> : <span class="implicit boundvar" title="">A</span>) ->
+(<span class="documented boundvar" title="the right element of the pair">b</span> : <span class="implicit boundvar" title="">B</span>) ->
+<a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><span class="implicit boundvar" title="">A</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
+<span class="implicit boundvar" title="">B</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">)</a></span></dt><dd><p>A pair of elements</p>
+<dl><dt>a</dt><dd><p>the left element of the pair</p>
+</dd><dt>b</dt><dd><p>the right element of the pair</p>
+</dd></dl></dd></dl></dd><dt id="Builtins.UPair"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.UPair">UPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the left elements in the pair">A</span> : <span class="type" title="AnyType">AnyType</span>) ->
+(<span class="documented boundvar" title="the type of the right elements in the pair">B</span> : <span class="type" title="AnyType">AnyType</span>) ->
+<span class="type" title="AnyType">AnyType</span></span></dt><dd><p>The non-dependent pair type, also known as conjunction, usable with<br />
+UniqueTypes.</p>
+<dl><dt>A</dt><dd><p>the type of the left elements in the pair</p>
+</dd><dt>B</dt><dd><p>the type of the right elements in the pair</p>
+</dd></dl><dl class="decls"><dt id="Builtins.MkUPair"><span class="name constructor" title="Builtins.MkUPair">MkUPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the left element of the pair">a</span> : <span class="implicit boundvar" title="">A</span>) ->
+(<span class="documented boundvar" title="the right element of the pair">b</span> : <span class="implicit boundvar" title="">B</span>) ->
+<a class="type" title="Builtins.UPair" href="Builtins.html#Builtins.UPair">UPair</a> <span class="implicit boundvar" title="">A</span>
+<span class="implicit boundvar" title="">B</span></span></dt><dd><p>A pair of elements</p>
+<dl><dt>a</dt><dd><p>the left element of the pair</p>
+</dd><dt>b</dt><dd><p>the right element of the pair</p>
+</dd></dl></dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>
